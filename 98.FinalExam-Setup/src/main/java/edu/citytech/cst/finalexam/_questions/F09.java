@@ -17,10 +17,8 @@ public class F09 {
 		 long count = list.stream()
 		     .filter(e -> e.getDividendFrequence().equals("Quarterly") )
 		     .map( e -> {
-		    	 Map<String,String> map = new HashMap<>();
-		    	 map.put("symbol", e.getSymbol());
-		    	 map.put("exchange", e.getExchange());
-		    	 map.put("frequency", e.getDividendFrequence());	
+		    	 Map<String,Float> map = new HashMap<>();
+		    	 map.put("price", e.getPrice());	
 		    	 return map;
 		     })
 		     .peek(System.out::println)
