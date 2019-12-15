@@ -7,10 +7,10 @@ import java.util.Map;
 import edu.citytech.cst.finalexam.dao.StockDAO;
 import edu.citytech.cst.finalexam.model.Stock;
 
-public class F05 {	
+public class F10 {	
  
-	/* How many stock are paid Quarterly? See field dividend frequency.
-	 * The answer id count: 133
+	/* 
+	 * How Many Stocks are in this list?	 
 	 * */
 	 public static void main(String[] args) {		 
 		 List<Stock> list = new StockDAO().findAll();

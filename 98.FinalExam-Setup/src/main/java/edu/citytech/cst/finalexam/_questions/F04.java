@@ -7,20 +7,20 @@ import java.util.Map;
 import edu.citytech.cst.finalexam.dao.StockDAO;
 import edu.citytech.cst.finalexam.model.Stock;
 
-public class F05 {	
+public class F04 {	
  
-	/* How many stock are paid Quarterly? See field dividend frequency.
-	 * The answer id count: 133
+	/*
+	 * How many stocks are in category e-01?
+	 * 
 	 * */
 	 public static void main(String[] args) {		 
 		 List<Stock> list = new StockDAO().findAll();
 		 long count = list.stream()
-		     .filter(e -> e.getDividendFrequence().equals("Quarterly") )
+		     .filter(e -> e.getSymbol().compareTo("I") < 0 )
 		     .map( e -> {
 		    	 Map<String,String> map = new HashMap<>();
 		    	 map.put("symbol", e.getSymbol());
-		    	 map.put("exchange", e.getExchange());
-		    	 map.put("frequency", e.getDividendFrequence());	
+		    	 map.put("exchange", e.getExchange());		    	 
 		    	 return map;
 		     })
 		     .peek(System.out::println)
