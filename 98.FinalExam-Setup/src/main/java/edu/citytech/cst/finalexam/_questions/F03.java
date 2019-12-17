@@ -17,12 +17,12 @@ public class F03 {
 	 * */
 	 public static void main(String[] args) {		 
 		 List<Stock> list = new StockDAO().findAll();
-		Predicate<Stock> SymEx = e -> e.toString().contains(e.getSymbol());
-		Predicate<Stock> SymEx1 = e -> e.getSymbol().contentEquals("");
+//		Predicate<Stock> SymEx = e -> e.toString().contains(e.getSymbol());
+//		Predicate<Stock> SymEx1 = e -> e.getSymbol().contentEquals("");
 
 
 		 long count = list.stream()
-		     .filter(e -> e.getSymbol().compareTo("I") < 0).filter(SymEx1)
+		     .filter(e -> e.getSymbol().compareTo("I") < 0)
 		     .map( e -> {
 		    	 Map<String,String> map = new HashMap<>();
 		    	 map.put("symbol", e.getSymbol());
